@@ -1,15 +1,25 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios';
 import './NewsPageItem.css'
+import moment from 'moment';
 
 
+// moment().format();
 
 const NewsPageItem = (props) => {
 
   const [ newsUpdateItem, setnewsUpdateItem ] = useState([]);
+  // console.log("time calculated: ",moment(newsUpdateItem.time).format() )
 
-  // console.log("props from newspageItem", typeof props.newsStoriesId)
-  console.log("newsUpdateItem from newspageItem", newsUpdateItem)
+  console.log("props from newspageItem", props)
+
+
+  const milliseconds = newsUpdateItem.time * 1000 // 1575909015000
+
+  const dateObject = new Date(milliseconds)
+
+  // console.log("dateObject from newspageItem",moment(dateObject).fromNow())
+
   useEffect(() => {
     axios.get(`https://hacker-news.firebaseio.com/v0/item/${Number(props.newsStoriesId)}.json?print=pretty`
    )
@@ -36,7 +46,7 @@ const NewsPageItem = (props) => {
         </p>
         )}
         <div className="submission2">
-          <output type="date">10 days ago | {newsUpdateItem.descendants} comments </output>
+          <output type="date">{moment(dateObject).fromNow()} | {newsUpdateItem.descendants} comments </output>
         </div>
       </article>
       
