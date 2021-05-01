@@ -35,8 +35,8 @@ const NewsPageItem = (props) => {
   }, [])
 
   return (
-    <>
-    {finalTimeArray && (Number(finalTimeArray[0]) <= 9) ? (
+   <>
+    {finalTimeArray && (Number(finalTimeArray[0]) > 9 && finalTimeArray.includes('hours')) ? (
       <div className="tweet-container">
         <article >
           <header>
@@ -59,7 +59,6 @@ const NewsPageItem = (props) => {
       </div>
       ) : null}
     </>
-
   );
 };
 

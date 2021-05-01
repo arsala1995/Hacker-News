@@ -1,6 +1,7 @@
 import React, {useEffect, useState, Fragment} from 'react'
 import axios from 'axios';
 import NewsPageItem from './NewsPageItem'
+import OldPageItem from './OldPageItem'
 // import './Navbar.css'
 
 
@@ -17,14 +18,25 @@ const NewsPage = () => {
   console.log("newsUpdate", newsUpdate)
 
   const renderNewsPageItem = (arr, selectState) => {
-    return arr.map((card, index) => (
-      <NewsPageItem
-        key={index}
-        newsStoriesId={card}
-        state={selectState}
-        
-      />
-    ));
+    if(selectState === "New") {
+      return arr.map((card, index) => (
+        <NewsPageItem
+          key={index}
+          newsStoriesId={card}
+          state={selectState}
+          
+        />
+      ));
+    } else {
+        return arr.map((card, index) => (
+          <OldPageItem
+            key={index}
+            newsStoriesId={card}
+            state={selectState}
+            
+          />
+        ));
+    }
   };
 
 
