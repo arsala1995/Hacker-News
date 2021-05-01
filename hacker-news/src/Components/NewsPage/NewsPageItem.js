@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios';
-// import './Navbar.css'
+import './NewsPageItem.css'
 
 
 
@@ -21,9 +21,24 @@ const NewsPageItem = (props) => {
   }, [])
 
   return (
-    <div >
-      <button>New</button>
-      <button>Past</button>
+    <div className="tweet-container">
+      <article >
+        <header>
+          <h2>{newsUpdateItem.title}</h2>
+        </header>
+       {newsUpdateItem.text ? (
+          <p name="text" className="tweet-given">
+            {newsUpdateItem.text}
+          </p>
+       ) : (
+        <p name="text" className="tweet-given">
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, …when an unknown printer took a galley of type and scrambled
+        </p>
+        )}
+        <div className="submission2">
+          <output type="date">10 days ago | {newsUpdateItem.descendants} comments </output>
+        </div>
+      </article>
       
     </div>
   );

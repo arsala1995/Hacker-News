@@ -33,7 +33,7 @@ const NewsPage = () => {
   }, [])
 
   return (
-    <div >
+    <div className="news-container">
       <button>New</button>
       <button>Past</button>
       {renderNewsPageItem(newsUpdate)}
