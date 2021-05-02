@@ -11,7 +11,7 @@ const NewsPageItem = (props) => {
   const [ newsUpdateItem, setnewsUpdateItem ] = useState([]);
   // console.log("time calculated: ",moment(newsUpdateItem.time).format() )
 
-  // console.log("props from newspageItem", props)
+  console.log("props from newspageItem", props)
 
 
   const milliseconds = newsUpdateItem.time * 1000 // 1575909015000

@@ -49,4 +49,17 @@
   
   background: #F2F2F2;
   border-radius: 12px;
+
+}
+
+.load-more-container {
+/* position: absolute; */
+width: 328px;
+height: 48px;
+margin-left: 15px;
+/* top: 516px; */
+margin-bottom: 15px;
+background: #FFC700;
+border-radius: 12px;
+cursor: pointer;
 }

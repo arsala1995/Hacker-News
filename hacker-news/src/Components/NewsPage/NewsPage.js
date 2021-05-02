@@ -14,7 +14,8 @@ const NewsPage = () => {
   };
   const [selected, setSelected] = useState('New');
   const [toggleState, setToggleState] = useState(1);
-  
+
+  console.log("newsUpdate", newsUpdate)
 
   const renderNewsPageItem = (arr, selectState) => {
     if(selectState === "New") {
@@ -78,6 +79,8 @@ const NewsPage = () => {
         </div>
       </div>
       <div className="col-md-10"> 
+        {/* {renderNewsPageItem(newsUpdate)} */}
+
         {((selected && selected === 'New')) && (
           <Fragment>
            {renderNewsPageItem(newsUpdate, selected)}
@@ -91,6 +94,8 @@ const NewsPage = () => {
         )}    
 
       </div> 
+      <button className="load-more-container">Load more</button>
+
       <Footer />   
     </div>
   );
