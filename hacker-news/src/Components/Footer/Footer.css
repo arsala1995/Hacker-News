@@ -1,0 +1,21 @@
+.Footer-container {
+  position: absolute;
+  width: 360px;
+  height: 99px;
+  margin-left: 0px;
+  /* top: 580px; */
+  
+  background: #FBC91B;
+  
+}
+
+.hackernews {
+
+  position: absolute;
+  margin-left: 0.59%;
+  margin-right: 90.8%;
+  margin-top: 3.95%;
+  margin-bottom: 5.26%;
+  font-weight: bold;
+  color: #000000;
+}

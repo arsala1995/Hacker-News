@@ -1,10 +1,31 @@
 .navBar-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 100%;
-  position: static;
+  position: absolute;
+  width: 360px;
+  height: 51px;
+  left: 0px;
+  top: 0px;
+  
+  background: #FFFFFF;
+  box-shadow: 0px 3px 28px rgba(0, 0, 0, 0.08);
   
 }
+.hacker {
+  position: absolute;
+  margin-left: 0.59%;
+  margin-right: 90.8%;
+  margin-top: 3.95%;
+  margin-bottom: 5.26%;
+  font-weight: bold;
+  color: #FBC91B;
+}
+.news {
+
+  position: absolute;
+  margin-left: 18.5%;
+  margin-right: 34.81%;
+  margin-top: 3.96%;
+  margin-bottom: 5.26%;
+  font-weight: bold;
+  color: #000000;
+}
+

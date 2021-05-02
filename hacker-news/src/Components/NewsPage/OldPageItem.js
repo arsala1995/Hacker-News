@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios';
-import './NewsPageItem.css'
+import './OldPageItem.css'
 import moment from 'moment';
 
 
@@ -21,7 +21,6 @@ const NewsPageItem = (props) => {
   // console.log("dateObject from newspageItem", typeof moment(dateObject).fromNow())
   const finalTime = moment(dateObject).fromNow();
   const finalTimeArray = finalTime.split(/(\s+)/);
-  console.log(finalTimeArray)
 
   useEffect(() => {
     axios.get(`https://hacker-news.firebaseio.com/v0/item/${Number(props.newsStoriesId)}.json?print=pretty`
@@ -37,17 +36,17 @@ const NewsPageItem = (props) => {
   return (
    <>
     {finalTimeArray && (Number(finalTimeArray[0]) > 9 && finalTimeArray.includes('hours')) ? (
-      <div className="tweet-container">
+      <div className="article-container">
         <article >
-          <header>
-            <h2>{newsUpdateItem.title}</h2>
+          <header >
+            {newsUpdateItem.title}
           </header>
         {newsUpdateItem.text ? (
-            <p name="text" className="tweet-given">
+            <p name="text" className="article-given">
               {newsUpdateItem.text}
             </p>
         ) : (
-          <p name="text" className="tweet-given">
+          <p name="text" className="article-given">
             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, …when an unknown printer took a galley of type and scrambled
           </p>
           )}

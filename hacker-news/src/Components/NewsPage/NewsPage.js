@@ -2,9 +2,9 @@ import React, {useEffect, useState, Fragment} from 'react'
 import axios from 'axios';
 import NewsPageItem from './NewsPageItem'
 import OldPageItem from './OldPageItem'
-// import './Navbar.css'
-
-
+import './NewsPage.css'
+import Nav from '../Navbar/Navbar'
+import Footer from '../Footer/Footer'
 
 const NewsPage = () => {
 
@@ -14,8 +14,7 @@ const NewsPage = () => {
   };
   const [selected, setSelected] = useState('New');
   const [toggleState, setToggleState] = useState(1);
-
-  console.log("newsUpdate", newsUpdate)
+  
 
   const renderNewsPageItem = (arr, selectState) => {
     if(selectState === "New") {
@@ -52,6 +51,7 @@ const NewsPage = () => {
 
   return (
     <div className="news-container">
+      <Nav />
       <div className="row">
         <div className="tab-row">
           <div className="tab-switcher">
@@ -61,7 +61,7 @@ const NewsPage = () => {
                 toggleTab(1);
                 setSelected('New');
               }}
-              className={toggleState === 1 ? 'tab active-tab' : 'tab'}
+              className={toggleState === 1 ? 'active-tab' : 'tab'}
             >
               New
             </button>
@@ -70,7 +70,7 @@ const NewsPage = () => {
                 toggleTab(2);
                 setSelected('Past');
               }}
-              className={toggleState === 2 ? 'tab active-tab' : 'tab'}
+              className={toggleState === 2 ? 'active-tab' : 'tab'}
             >
               Past
             </button>
@@ -78,8 +78,6 @@ const NewsPage = () => {
         </div>
       </div>
       <div className="col-md-10"> 
-        {/* {renderNewsPageItem(newsUpdate)} */}
-
         {((selected && selected === 'New')) && (
           <Fragment>
            {renderNewsPageItem(newsUpdate, selected)}
@@ -92,7 +90,8 @@ const NewsPage = () => {
           </Fragment>
         )}    
 
-      </div>    
+      </div> 
+      <Footer />   
     </div>
   );
 };

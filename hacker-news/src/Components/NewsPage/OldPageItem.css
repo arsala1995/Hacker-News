@@ -35,7 +35,6 @@ box-shadow: 5px 10px gray;
   line-height: 16px;
   color: rgba(0, 0, 0, 0.82);
   font-family: sans-serif;
-  word-break: break-word;
 }
 
 
@@ -68,6 +67,7 @@ box-shadow: 5px 10px gray;
     line-height: 11px;
     color: rgba(0, 0, 0, 0.5);
     font-family: sans-serif;
+    word-break: break-word;
   }
 
 

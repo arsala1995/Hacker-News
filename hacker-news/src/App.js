@@ -5,7 +5,7 @@ import NewsPage from './Components/NewsPage/NewsPage'
 function App() {
   return (
     <div className="App">
-     <div> <Nav /> </div>
+      <Nav /> 
      <NewsPage />
      
     </div>

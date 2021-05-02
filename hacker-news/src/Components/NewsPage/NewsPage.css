@@ -1,3 +1,52 @@
+.tab-switcher {
+  margin: 3em 0 1.5em 0;
+}
+
 .news-container {
-  background: lightgray;
+  position: absolute;
+  width: 360px;
+  height: 679px;
+  left: 0px;
+  top: 0px;
+
+  background: #FFFFFF;
+}
+
+.active-tab {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 4px 12px;
+  
+  position: absolute;
+  width: 61px;
+  height: 24px;
+  left: 16px;
+  top: 67px;
+  
+  background: #FBC91B;
+  border-radius: 12px;
+}
+
+.tab-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  /* justify-content: center; */
+}
+
+.tab {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 4px 12px;
+  
+  position: absolute;
+  width: 59px;
+  height: 24px;
+  left: 84px;
+  top: 67px;
+  
+  background: #F2F2F2;
+  border-radius: 12px;
 }
