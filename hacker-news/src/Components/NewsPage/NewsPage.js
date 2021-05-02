@@ -14,12 +14,13 @@ const NewsPage = () => {
   };
   const [selected, setSelected] = useState('New');
   const [toggleState, setToggleState] = useState(1);
+  const [visible, setVisible] = useState(3);
 
-  console.log("newsUpdate", newsUpdate)
-
+//function to check if it is new or past selection will call that component accordingly to render story
   const renderNewsPageItem = (arr, selectState) => {
     if(selectState === "New") {
-      return arr.map((card, index) => (
+      return arr.slice(0, visible).map((card, index) => (
+        // return arr.map((card, index) => (
         <NewsPageItem
           key={index}
           newsStoriesId={card}
@@ -28,7 +29,8 @@ const NewsPage = () => {
         />
       ));
     } else {
-        return arr.map((card, index) => (
+        return arr.slice(0, visible).map((card, index) => (
+          // return arr.map((card, index) => (
           <OldPageItem
             key={index}
             newsStoriesId={card}
@@ -39,15 +41,19 @@ const NewsPage = () => {
     }
   };
 
+//to render more stories, it might need for you to click load more several times until it will load more stories, due to time i was not able to fix this bug.
+  const loadMoreItems = () => {
+    setVisible((prevValue) => prevValue + 3)
+  }
 
+//to fetch all the newstories from the hacker news api
   useEffect(() => {
     axios.get("https://hacker-news.firebaseio.com/v0/newstories.json?print=pretty"
    )
-  
    .then(response => {
-    // return response.data.jobs;
     setnewsUpdate(response.data)
   })
+  .catch((error) => console.error('Error', error));
   }, [])
 
   return (
@@ -79,7 +85,6 @@ const NewsPage = () => {
         </div>
       </div>
       <div className="col-md-10"> 
-        {/* {renderNewsPageItem(newsUpdate)} */}
 
         {((selected && selected === 'New')) && (
           <Fragment>
@@ -94,7 +99,7 @@ const NewsPage = () => {
         )}    
 
       </div> 
-      <button className="load-more-container">Load more</button>
+      <button className="load-more-container" onClick={loadMoreItems}>Load more</button>
 
       <Footer />   
     </div>
