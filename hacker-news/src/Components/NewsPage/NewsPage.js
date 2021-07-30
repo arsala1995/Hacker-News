@@ -14,13 +14,11 @@ const NewsPage = () => {
   };
   const [selected, setSelected] = useState('New');
   const [toggleState, setToggleState] = useState(1);
-  const [visible, setVisible] = useState(3);
 
-//function to check if it is new or past selection will call that component accordingly to render story
+//function to check if it is new or past selection will call that component accordin<gly to render story
   const renderNewsPageItem = (arr, selectState) => {
     if(selectState === "New") {
-      return arr.slice(0, visible).map((card, index) => (
-        // return arr.map((card, index) => (
+        return arr.map((card, index) => (
         <NewsPageItem
           key={index}
           newsStoriesId={card}
@@ -29,8 +27,7 @@ const NewsPage = () => {
         />
       ));
     } else {
-        return arr.slice(0, visible).map((card, index) => (
-          // return arr.map((card, index) => (
+          return arr.map((card, index) => (
           <OldPageItem
             key={index}
             newsStoriesId={card}
@@ -40,11 +37,6 @@ const NewsPage = () => {
         ));
     }
   };
-
-//to render more stories, it might need for you to click load more several times until it will load more stories, due to time i was not able to fix this bug.
-  const loadMoreItems = () => {
-    setVisible((prevValue) => prevValue + 3)
-  }
 
 //to fetch all the newstories from the hacker news api
   useEffect(() => {
@@ -99,8 +91,6 @@ const NewsPage = () => {
         )}    
 
       </div> 
-      <button className="load-more-container" onClick={loadMoreItems}>Load more</button>
-
       <Footer />   
     </div>
   );

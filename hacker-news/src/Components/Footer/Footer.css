@@ -19,3 +19,10 @@
   font-weight: bold;
   color: #000000;
 }
+
+/* Responsive design at max width 991px */
+/* @media screen and (max-width: 1422px) {
+  .Footer-container  {
+    width: 100%;
+  }
+} */

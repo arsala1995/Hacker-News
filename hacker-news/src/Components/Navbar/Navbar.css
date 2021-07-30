@@ -29,3 +29,11 @@
   color: #000000;
 }
 
+
+/* Responsive design at max width 991px */
+/* @media screen and (max-width: 1422px) {
+  .navBar-container  {
+    width: 100%;
+    height: 100%;
+  }
+} */
